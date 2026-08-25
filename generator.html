@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generator Link Undangan - Maksi & Indiani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f6f1e7;--gold:#a98a5c;--gold-dark:#7c6540;--brown:#4a3b2a;--brown-soft:#6b5a45;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;min-height:100vh;
+    background:linear-gradient(160deg,#f6f1e7,#eaddc2);
+    font-family:'Poppins',sans-serif;color:var(--brown);
+    display:flex;align-items:center;justify-content:center;padding:24px;
+  }
+  .box{
+    max-width:460px;width:100%;
+    background:rgba(255,251,244,0.9);
+    border-radius:24px;padding:34px 28px;
+    box-shadow:0 12px 40px rgba(74,59,42,0.2);
+    text-align:center;
+  }
+  h1{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 4px;}
+  p.sub{font-size:12.5px;color:var(--brown-soft);margin-bottom:24px;}
+  label{display:block;text-align:left;font-size:11px;letter-spacing:1px;color:var(--gold-dark);margin-bottom:6px;}
+  input[type=text]{
+    width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(169,138,92,0.4);
+    font-family:'Poppins',sans-serif;font-size:14px;margin-bottom:18px;background:#fff;
+  }
+  input[type=text]:focus{outline:2px solid var(--gold);}
+  button.generate{
+    width:100%;padding:13px;border:none;border-radius:24px;
+    background:var(--brown);color:var(--cream);font-size:13px;letter-spacing:1.5px;
+    cursor:pointer;font-weight:600;
+  }
+  button.generate:hover{opacity:0.92;}
+  .result{
+    margin-top:24px;text-align:left;
+    display:none;
+  }
+  .result.show{display:block;}
+  .link-box{
+    background:var(--cream);border:1px dashed var(--gold);border-radius:12px;
+    padding:12px 14px;font-size:12px;word-break:break-all;color:var(--brown-soft);margin-bottom:12px;
+  }
+  .actions{display:flex;gap:10px;}
+  .actions button, .actions a{
+    flex:1;text-align:center;padding:11px 8px;border-radius:20px;font-size:12px;
+    text-decoration:none;cursor:pointer;border:none;font-family:'Poppins',sans-serif;font-weight:500;
+  }
+  .btn-copy{background:#efe0bd;color:var(--brown);}
+  .btn-copy.copied{background:#4c7a52;color:#fff;}
+  .btn-wa{background:#3fae54;color:#fff;}
+  .hint{font-size:10.5px;color:#a8977a;margin-top:16px;line-height:1.7;text-align:left;}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h1>Generator Link Undangan</h1>
+  <p class="sub">Maksi & Indiani — 04.09.2026</p>
+
+  <label for="guestNameInput">NAMA TAMU</label>
+  <input type="text" id="guestNameInput" placeholder="Contoh: Bapak Budi Santoso">
+
+  <button class="generate" id="generateBtn">✦ HASILKAN LINK ✦</button>
+
+  <div class="result" id="resultBox">
+    <label>LINK UNDANGAN</label>
+    <div class="link-box" id="generatedLink"></div>
+    <div class="actions">
+      <button class="btn-copy" id="copyBtn">📋 Salin Link</button>
+      <a class="btn-wa" id="waBtn" href="#" target="_blank" rel="noopener">💬 Bagikan via WA</a>
+    </div>
+  </div>
+
+  <p class="hint">
+    Ganti <b>BASE_URL</b> di bagian atas file ini (dalam tag &lt;script&gt;) dengan alamat website undangan Anda setelah di-hosting, misalnya:
+    <br><code>https://undangan-maksi-indiani.com/index.html</code>
+  </p>
+</div>
+
+<script>
+  // Ganti dengan alamat website undangan Anda setelah dihosting
+  const BASE_URL = "index.html";
+
+  const nameInput = document.getElementById("guestNameInput");
+  const generateBtn = document.getElementById("generateBtn");
+  const resultBox = document.getElementById("resultBox");
+  const linkDisplay = document.getElementById("generatedLink");
+  const copyBtn = document.getElementById("copyBtn");
+  const waBtn = document.getElementById("waBtn");
+
+  let currentLink = "";
+
+  generateBtn.addEventListener("click", () => {
+    const name = nameInput.value.trim();
+    if(!name){
+      nameInput.focus();
+      nameInput.style.borderColor = "#c0524f";
+      return;
+    }
+    nameInput.style.borderColor = "";
+
+    const encodedName = encodeURIComponent(name).replace(/%20/g, "+");
+    currentLink = `${BASE_URL}?to=${encodedName}`;
+
+    linkDisplay.textContent = currentLink;
+    resultBox.classList.add("show");
+
+    const waMessage =
+`Kepada Yth. Bapak/Ibu/Saudara/i ${name}
+
+Dengan penuh sukacita, kami mengundang Anda untuk hadir di hari pernikahan kami:
+
+*Maksi & Indiani*
+04 September 2026
+
+Berikut link undangan digital kami, mohon kesediaannya untuk membuka:
+${currentLink}
+
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+
+Terima kasih 🙏`;
+
+    waBtn.href = `https://wa.me/?text=${encodeURIComponent(waMessage)}`;
+  });
+
+  copyBtn.addEventListener("click", () => {
+    if(!currentLink) return;
+    navigator.clipboard.writeText(currentLink).then(() => {
+      copyBtn.textContent = "✓ Tersalin";
+      copyBtn.classList.add("copied");
+      setTimeout(() => {
+        copyBtn.textContent = "📋 Salin Link";
+        copyBtn.classList.remove("copied");
+      }, 1800);
+    });
+  });
+
+  nameInput.addEventListener("keydown", (e) => {
+    if(e.key === "Enter") generateBtn.click();
+  });
+</script>
+
+</body>
+</html>
