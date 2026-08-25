@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>The Wedding of Maksi & Indiani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- Falling leaves ambience -->
+<div class="leaves-layer" id="leavesLayer" aria-hidden="true"></div>
+
+<!-- Curtain intro overlay -->
+<div id="curtain" aria-hidden="true">
+  <div class="panel left"><div class="hem"></div></div>
+  <div class="panel right"><div class="hem"></div></div>
+  <div class="emblem">M&nbsp;&amp;&nbsp;I</div>
+</div>
+
+<!-- Floating music toggle -->
+<button id="musicToggle" class="music-btn" aria-label="Putar musik">
+  <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+</button>
+<audio id="bgMusic" loop preload="none">
+  <source src="assets/Yovie & Nuno - Janji Suci Lirik Lagu.mp3" type="audio/mpeg">
+</audio>
+
+<div id="scrollContainer">
+
+  <!-- ============ 1. OPENING ============ -->
+  <section class="screen cover" id="s-cover" style="background-image:url('assets/Latar.jpg')">
+    <div class="cover-overlay"></div>
+    <div class="cover-content">
+      <div class="ornament">✦❧✦</div>
+      <p class="eyebrow">THE WEDDING OF</p>
+      <h1 class="couple-name">Maksi <span class="amp">&amp;</span> Indiani</h1>
+      <div class="divider"><span>✝</span></div>
+      <p class="wedding-date">04 . 09 . 2026</p>
+
+      <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+      <p class="guest-name" id="guestName">Tamu Undangan</p>
+
+      <p class="invite-line">KAMI MENGUNDANG ANDA UNTUK HADIR<br>DI HARI ISTIMEWA KAMI</p>
+      <button class="btn-main" id="openInvite">BUKA UNDANGAN <span>›</span></button>
+      <div class="bounce">⌄</div>
+    </div>
+  </section>
+
+  <!-- ============ 2. MEMPELAI ============ -->
+  <section class="screen sec-cream" id="s-mempelai" data-color="cream">
+    <div class="screen-content">
+      <div class="ornament reveal">❧ 💍 ❧</div>
+      <h2 class="title-serif reveal">MEMPELAI</h2>
+      <div class="divider reveal"><span>♥</span></div>
+      <p class="lead-text reveal">Dengan penuh syukur,<br>kami memperkenalkan kedua mempelai<br>yang akan mengikat janji suci dalam kasih.</p>
+
+      <div class="countdown-inline reveal" id="countdown" style="display:flex;gap:8px;justify-content:center;margin:20px 0 4px;">
+        <div class="cd-box framed" style="min-width:56px;padding:9px 4px;text-align:center;"><span id="cd-days" style="display:block;font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text-main);">00</span><small style="font-size:8.5px;letter-spacing:1px;color:var(--text-soft);">Hari</small></div>
+        <div class="cd-box framed" style="min-width:56px;padding:9px 4px;text-align:center;"><span id="cd-hours" style="display:block;font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text-main);">00</span><small style="font-size:8.5px;letter-spacing:1px;color:var(--text-soft);">Jam</small></div>
+        <div class="cd-box framed" style="min-width:56px;padding:9px 4px;text-align:center;"><span id="cd-mins" style="display:block;font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text-main);">00</span><small style="font-size:8.5px;letter-spacing:1px;color:var(--text-soft);">Menit</small></div>
+        <div class="cd-box framed" style="min-width:56px;padding:9px 4px;text-align:center;"><span id="cd-secs" style="display:block;font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text-main);">00</span><small style="font-size:8.5px;letter-spacing:1px;color:var(--text-soft);">Detik</small></div>
+      </div>
+
+      <p class="sub-title reveal">❧ A. MEMPELAI PRIA ❧</p>
+      <div class="card framed reveal">
+        <div class="card-photo"><img src="assets/Mempelai_Pria.jpg" alt="Maksi Kristofel Tetti"></div>
+        <p class="card-label">Nama Mempelai Pria</p>
+        <h3 class="card-name">Maksi Kristofel Tetti</h3>
+        <ul class="detail-list">
+          <li><span>✝</span> Agama <b>:</b> Kristen Protestan</li>
+          <li><span>👤</span> Nama Ayah <b>:</b> Paulus Teti</li>
+          <li><span>👤</span> Nama Ibu <b>:</b> Arianci Loe</li>
+          <li><span>★</span> Putra Keberapa <b>:</b> Putra Pertama, anak kedua dari 6 bersaudara</li>
+        </ul>
+      </div>
+
+      <p class="sub-title reveal">❧ B. MEMPELAI WANITA ❧</p>
+      <div class="card framed reveal">
+        <div class="card-photo"><img src="assets/Mempelai_Wanita.jpg" alt="Indiani Cristina Ndolu"></div>
+        <p class="card-label">Nama Mempelai Wanita</p>
+        <h3 class="card-name">Indiani Cristina Ndolu</h3>
+        <ul class="detail-list">
+          <li><span>✝</span> Agama <b>:</b> Kristen Protestan</li>
+          <li><span>👤</span> Nama Ayah <b>:</b> Seprianus Bastian Ndolu</li>
+          <li><span>👤</span> Nama Ibu <b>:</b> Wehelmina Lette</li>
+          <li><span>★</span> Putri Keberapa <b>:</b> Pertama dari 6 bersaudara</li>
+        </ul>
+      </div>
+
+      <blockquote class="verse-box small reveal">
+        <p>"Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."</p>
+        <cite>Matius 19:6</cite>
+      </blockquote>
+
+      <div class="nav-btns">
+        <button class="nav-arrow" data-dir="-1">‹</button>
+        <button class="nav-next" data-target="s-lovestory">NEXT</button>
+        <button class="nav-arrow" data-dir="1">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. LOVE STORY ============ -->
+  <section class="screen sec-tosca" id="s-lovestory" data-color="tosca">
+    <div class="screen-content">
+      <p class="eyebrow reveal">OUR LOVE STORY</p>
+      <h2 class="title-serif reveal">Maksi &amp; Indiani</h2>
+      <p class="lead-text reveal">Demikianlah tinggal ketiga hal ini, yaitu iman, pengharapan dan kasih, dan yang paling besar di antaranya ialah kasih.</p>
+      <p class="verse-ref reveal">1 Korintus 13:13</p>
+
+      <p class="sub-title reveal">✿ LOVE STORY ✿</p>
+      <p class="lead-text small reveal">Setiap cerita kami adalah bagian dari rencana indah Tuhan.</p>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-photo"><img src="assets/Love_Story1.jpg" alt="Perkenalan"></div>
+          <div class="tl-text">
+            <span class="tl-icon">♥</span>
+            <p class="tl-date">2019</p>
+            <h4>Perkenalan</h4>
+            <p>Kami pertama kali saling mengenal pada tahun 2019, awal dari sebuah kisah yang indah.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal reveal-delay-1">
+          <div class="tl-photo"><img src="assets/Love_Story2.jpg" alt="Berpacaran"></div>
+          <div class="tl-text">
+            <span class="tl-icon">❧</span>
+            <p class="tl-date">11 Maret 2019</p>
+            <h4>Berpacaran</h4>
+            <p>Hari di mana kami memutuskan untuk saling melengkapi dan menjalani hari-hari bersama.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal reveal-delay-2">
+          <div class="tl-photo"><img src="assets/Love_Story3.jpg" alt="Pernikahan"></div>
+          <div class="tl-text">
+            <span class="tl-icon">💍</span>
+            <p class="tl-date">04 September 2026</p>
+            <h4>Pernikahan</h4>
+            <p>Hari bahagia ketika kami mengikat janji suci di hadapan Tuhan, keluarga, dan sahabat tercinta.</p>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="verse-box small reveal">
+        <p>"Aku telah menemukan orang yang dicintai hatiku. Aku telah memegang dia dan tidak akan melepaskannya lagi."</p>
+        <cite>Kidung Agung 3:4</cite>
+      </blockquote>
+
+      <div class="nav-btns">
+        <button class="nav-arrow" data-dir="-1">‹</button>
+        <button class="nav-next" data-target="s-acara">NEXT</button>
+        <button class="nav-arrow" data-dir="1">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. RANGKAIAN ACARA ============ -->
+  <section class="screen sec-cream" id="s-acara" data-color="cream">
+    <div class="screen-content">
+      <div class="ornament reveal">❧ 💍 ❧</div>
+      <h2 class="title-serif reveal">RANGKAIAN<br>ACARA</h2>
+      <div class="divider reveal"><span>♥</span></div>
+      <p class="lead-text small reveal">Akad / Pemberkatan dan Resepsi Pernikahan</p>
+
+      <div class="acara-card framed reveal">
+        <div class="acara-head"><span class="ah-ic">⛪</span><h3>Akad / Pemberkatan</h3></div>
+        <div class="event-list">
+          <div class="event-row"><span class="ic">📍</span><div><b>Lokasi</b><p>Desa Hundihuk</p></div></div>
+          <div class="event-row"><span class="ic">🕐</span><div><b>Waktu</b><p>Jumat, 04 September 2026<br>Pukul 10.00 WITA</p></div></div>
+          <div class="event-row"><span class="ic">⛪</span><div><b>Nama Gedung</b><p>Gereja GMIT Pniel Hundihuk</p></div></div>
+          <div class="event-row"><span class="ic">🗺️</span><div><b>Peta Lokasi</b>
+            <a class="map-btn" id="mapAkad" href="#" target="_blank" rel="noopener">📍 Lihat di Google Maps ›</a>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="acara-card framed reveal reveal-delay-1">
+        <div class="acara-head"><span class="ah-ic">🥂</span><h3>Resepsi</h3></div>
+        <div class="event-list">
+          <div class="event-row"><span class="ic">📍</span><div><b>Lokasi</b><p>Desa Hundihuk, Dusun Hundihuk Timur</p></div></div>
+          <div class="event-row"><span class="ic">🕐</span><div><b>Waktu</b><p>Jumat, 04 September 2026<br>Pukul 19.00 WITA</p></div></div>
+          <div class="event-row"><span class="ic">🏠</span><div><b>Nama Tempat</b><p>Rumah Bapak Seprianus B. Ndolu</p></div></div>
+          <div class="event-row"><span class="ic">🗺️</span><div><b>Peta Lokasi</b>
+            <a class="map-btn" id="mapResepsi" href="#" target="_blank" rel="noopener">📍 Lihat di Google Maps ›</a>
+          </div></div>
+        </div>
+      </div>
+
+      <p class="closing-note reveal">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami berdua.</p>
+
+      <div class="nav-btns">
+        <button class="nav-arrow" data-dir="-1">‹</button>
+        <button class="nav-next" data-target="s-galeri">NEXT</button>
+        <button class="nav-arrow" data-dir="1">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. GALERI FOTO ============ -->
+  <section class="screen sec-tosca" id="s-galeri" data-color="tosca">
+    <div class="screen-content">
+      <div class="ornament reveal">❧ 🖼 ❧</div>
+      <h2 class="title-serif reveal">GALERI FOTO</h2>
+      <div class="divider reveal"><span>♥</span></div>
+      <p class="lead-text reveal">Momen indah yang telah kami lewati bersama.<br>Setiap foto adalah bagian dari cerita cinta kami.</p>
+
+      <div class="gallery-grid" id="galleryGrid"></div>
+
+      <blockquote class="verse-box small reveal">
+        <p>"Aku telah menemukan orang yang dicintai hatiku. Aku telah memegang dia dan tidak akan melepaskannya lagi."</p>
+        <cite>Kidung Agung 3:4</cite>
+      </blockquote>
+
+      <div class="nav-btns">
+        <button class="nav-arrow" data-dir="-1">‹</button>
+        <button class="nav-next" data-target="s-gift">NEXT</button>
+        <button class="nav-arrow" data-dir="1">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose">✕</button>
+    <img src="" alt="" id="lbImg">
+  </div>
+
+  <!-- ============ 6. WEDDING GIFT ============ -->
+  <section class="screen sec-cream" id="s-gift" data-color="cream">
+    <div class="screen-content">
+      <div class="ornament reveal">❧ 🎁 ❧</div>
+      <h2 class="title-serif reveal">WEDDING GIFT</h2>
+      <div class="divider reveal"><span>♥</span></div>
+      <p class="lead-text reveal">Doa restu Bapak/Ibu/Saudara/i merupakan hadiah terindah bagi kami.<br>Namun, apabila Bapak/Ibu/Saudara/i berkenan memberikan tanda kasih, dapat melalui rekening berikut.</p>
+
+      <p class="sub-title reveal">❧ TANDA KASIH ❧</p>
+
+      <div class="gift-cards">
+        <div class="atm-card reveal">
+          <div class="atm-top">
+            <span class="atm-bank">BRI</span>
+            <span class="atm-for">UNTUK MEMPELAI<br>WANITA</span>
+          </div>
+          <div class="atm-chip"></div>
+          <p class="atm-number" id="rekNumber">7677 0101 1122 538</p>
+          <div class="atm-bottom">
+            <div>
+              <p class="atm-name">Indiani Cristina Ndolu</p>
+              <p class="atm-valid">a.n Indiani Cristina Ndolu</p>
+            </div>
+            <span class="atm-logo">M&amp;I</span>
+          </div>
+        </div>
+        <button class="copy-btn reveal" id="copyRek">Salin No. Rekening</button>
+      </div>
+
+      <p class="closing-note reveal">Terima kasih atas doa, restu, dan kasih sayang yang telah Bapak/Ibu/Saudara/i berikan.<br>Semoga Tuhan membalas kebaikan dengan berkat yang berlimpah.</p>
+
+      <div class="nav-btns">
+        <button class="nav-arrow" data-dir="-1">‹</button>
+        <button class="nav-next" data-target="s-rsvp">NEXT</button>
+        <button class="nav-arrow" data-dir="1">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. RSVP ============ -->
+  <section class="screen sec-tosca" id="s-rsvp" data-color="tosca">
+    <div class="screen-content">
+      <div class="ornament reveal">❧ 💌 ❧</div>
+      <h2 class="title-serif reveal">RSVP</h2>
+      <p class="sub-title-plain reveal">UCAPAN CINTA KASIH</p>
+      <div class="divider reveal"><span>♥</span></div>
+      <p class="lead-text reveal">Kehadiran dan doa restu Bapak/Ibu/Saudara/i adalah anugerah terindah bagi kami.</p>
+
+      <p class="sub-title reveal">❧ KONFIRMASI KEHADIRAN ❧</p>
+      <p class="rsvp-note reveal">Mohon konfirmasi kehadiran Anda</p>
+
+      <div class="rsvp-choices reveal" id="rsvpChoices">
+        <button class="rsvp-choice" data-status="Hadir">
+          <span class="rc-icon">✓</span><b>HADIR</b><small>Dengan senang hati</small>
+        </button>
+        <button class="rsvp-choice" data-status="Ragu-Ragu">
+          <span class="rc-icon">?</span><b>RAGU-RAGU</b><small>Masih belum pasti</small>
+        </button>
+        <button class="rsvp-choice" data-status="Tidak Hadir">
+          <span class="rc-icon">✕</span><b>TIDAK HADIR</b><small>Mohon maaf berhalangan</small>
+        </button>
+      </div>
+
+      <form id="rsvpForm" class="reveal">
+        <label class="field-label">💬 UCAPAN &amp; DOA</label>
+        <textarea id="ucapanInput" placeholder="Tulis ucapan dan doa Anda di sini..." rows="3" required></textarea>
+
+        <label class="field-label">👤 NAMA ANDA</label>
+        <input type="text" id="namaInput" placeholder="Contoh: Budi Santoso" required>
+
+        <button type="submit" class="btn-main btn-send">📤 KIRIM UCAPAN</button>
+      </form>
+      <p id="rsvpStatusMsg"></p>
+
+      <div class="guestbook reveal">
+        <p class="sub-title">❧ UCAPAN &amp; DOA ❧</p>
+        <div id="guestbookList" class="guestbook-list">
+          <p class="gb-empty">Memuat ucapan...</p>
+        </div>
+      </div>
+
+      <p class="closing-note reveal">Terima kasih atas konfirmasi kehadiran, ucapan, dan doa yang telah Anda berikan. Tuhan memberkati.</p>
+
+      <div class="nav-btns">
+        <button class="nav-arrow" data-dir="-1">‹</button>
+        <button class="nav-next" data-target="s-thanks">NEXT</button>
+        <button class="nav-arrow" data-dir="1">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. TERIMA KASIH / FOOTER ============ -->
+  <section class="screen sec-cream" id="s-thanks" data-color="cream">
+    <div class="screen-content">
+      <div class="ornament reveal">❧ ♡ ❧</div>
+      <h2 class="title-serif reveal">TERIMA KASIH</h2>
+      <div class="divider reveal"><span>♥</span></div>
+      <p class="lead-text reveal">Terima kasih atas doa, restu, kasih sayang, dan kehadiran Anda yang menjadikan hari kami begitu istimewa dan penuh kebahagiaan.</p>
+      <p class="script-line reveal">Semoga Tuhan selalu memberkati kita semua.</p>
+
+      <div class="thanks-box framed reveal">
+        <div class="ornament small">❧ 🙏 ❧</div>
+        <p>Kebahagiaan kami akan lebih berarti jika Anda selalu menjadi bagian dari perjalanan kami.</p>
+        <p class="script-line">Terima kasih ♥</p>
+      </div>
+
+      <h3 class="footer-couple reveal">❧ Maksi &amp; Indiani ❧</h3>
+      <p class="footer-date reveal">04 . 09 . 2026</p>
+      <p class="footer-line reveal">Kami tunggu kehadiran dan doa terbaik dari Anda ♥</p>
+
+      <p class="credit-line reveal">Design by @rijald_elimanafe</p>
+      <div class="social-row reveal">
+        <a href="https://instagram.com/rijald_elimanafe" target="_blank" rel="noopener">
+          <span class="soc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></span>
+          <small>Instagram</small>
+        </a>
+        <a href="https://wa.me/6281338596854" target="_blank" rel="noopener">
+          <span class="soc-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.28 4.9L2 22l5.31-1.39a9.9 9.9 0 0 0 4.73 1.2h.01c5.46 0 9.9-4.45 9.9-9.9C21.96 6.45 17.5 2 12.04 2Zm5.8 14.14c-.24.69-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.83-4.2-4.98-4.4-.15-.19-1.2-1.59-1.2-3.03 0-1.44.76-2.15 1.03-2.44.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2.01.89 2.16.07.15.11.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.26.13.43.19.5.3.07.11.07.63-.17 1.31Z"/></svg></span>
+          <small>WhatsApp</small>
+        </a>
+        <a href="https://tiktok.com/@zhald_design" target="_blank" rel="noopener">
+          <span class="soc-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.2v13.9c0 1.55-1.24 2.82-2.79 2.82a2.8 2.8 0 0 1-2.8-2.8 2.8 2.8 0 0 1 2.8-2.8c.24 0 .48.03.7.09V9.9a6 6 0 0 0-.7-.04A6.03 6.03 0 0 0 4.6 15.9a6.03 6.03 0 0 0 6.02 6.02 6.03 6.03 0 0 0 6.02-6.02V8.2a8.16 8.16 0 0 0 4.76 1.53V6.5a4.86 4.86 0 0 1-4.8-4.5Z"/></svg></span>
+          <small>TikTok</small>
+        </a>
+      </div>
+      <p class="copyright reveal">© 2026 Maksi &amp; Indiani Wedding. All Rights Reserved. ♥</p>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
