@@ -23,8 +23,8 @@ const REKENING_NUMBER = "767701011122538";
    5. Pastikan opsi bin "Private" DIMATIKAN agar bisa dibaca semua tamu,
       atau tetap pakai X-Master-Key seperti contoh ini (client-side).
    ========================================================= */
-const JSONBIN_BIN_ID = "PASTE_BIN_ID_ANDA_DISINI";
-const JSONBIN_API_KEY = "PASTE_X_MASTER_KEY_ANDA_DISINI";
+const JSONBIN_BIN_ID = "6a8d5adeda38895dfe0df5af";
+const JSONBIN_API_KEY = "$2a$10$nou5c3yZntdxwBqnGEEOvuCkZpg9GT4CfSp1IXgNhJpKQzhxI8NYO";
 const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
 
 /* =========================================================
